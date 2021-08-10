@@ -1,4 +1,4 @@
-# libcom_users
+# libcom_pessoas
 
 A new Flutter project.
 

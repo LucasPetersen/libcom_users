@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.libcom_users.libcom_users">
+    package="com.example.libcom_pessoas.libcom_pessoas">
    <application
-        android:label="libcom_users"
+        android:label="libcom_pessoas"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
@@ -11,7 +11,7 @@
             android:hardwareAccelerated="true"
             android:windowSoftInputMode="adjustResize">
             <!-- Specifies an Android theme to apply to this Activity as soon as
-                 the Android process has started. This theme is visible to the user
+                 the Android process has started. This theme is visible to the pessoa
                  while the Flutter UI initializes. After that, this theme continues
                  to determine the Window background behind the Flutter UI. -->
             <meta-data

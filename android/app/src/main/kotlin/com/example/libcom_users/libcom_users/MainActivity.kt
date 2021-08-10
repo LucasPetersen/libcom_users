@@ -1,4 +1,4 @@
-package com.example.libcom_users.libcom_users
+package com.example.libcom_pessoas.libcom_pessoas
 
 import io.flutter.embedding.android.FlutterActivity
 

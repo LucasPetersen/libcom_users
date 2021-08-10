@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SplashPage extends StatelessWidget {
@@ -29,7 +28,7 @@ class SplashPage extends StatelessWidget {
   }
 
   void delayTimeAndGoHome(BuildContext context) async {
-    await Future.delayed(Duration(seconds: 2));
+    await Future.delayed(Duration(seconds: 3));
 
     navigateToHome(context);
   }

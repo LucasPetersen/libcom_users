@@ -1,6 +1,6 @@
 {
-    "name": "libcom_users",
-    "short_name": "libcom_users",
+    "name": "libcom_pessoas",
+    "short_name": "libcom_pessoas",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
