@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-import '../model/pessoa.dart';
+import '../model/usuario.dart';
 import '../widgets/detail_list.dart';
-import 'add_edit_pessoa_page.dart';
+import 'add_edit_usuario_page.dart';
 
 class DetailPage extends StatelessWidget {
-  final Pessoa pessoa;
+  final Usuario usuario;
 
-  const DetailPage({Key? key, required this.pessoa}) : super(key: key);
+  const DetailPage({Key? key, required this.usuario}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class DetailPage extends StatelessWidget {
       appBar: AppBar(title: Text('Detalhes')),
       body: Column(
         children: [
-          UserInfo(pessoa: pessoa),
+          UserInfo(usuario: usuario),
           const Divider(
             thickness: 3,
           ),
@@ -23,9 +23,9 @@ class DetailPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                DetailList(name: 'Código:', value: pessoa.idpessoa.toString()),
-                DetailList(name: 'Voluntário:', value: pessoa.nome),
-                DetailList(name: 'Código:', value: pessoa.sexo),
+                DetailList(name: 'Código:', value: usuario.idpessoa.toString()),
+                DetailList(name: 'Voluntário:', value: usuario.nome),
+                DetailList(name: 'Código:', value: usuario.sexo),
               ],
             ),
           )
@@ -34,7 +34,7 @@ class DetailPage extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => AddEditPessoaPage(isEditing: true, pessoa: pessoa)),
+            MaterialPageRoute(builder: (context) => AddEditUsuarioPage(isEditing: true, usuario: usuario)),
           );
         },
         child: Icon(Icons.edit),
@@ -47,10 +47,10 @@ class DetailPage extends StatelessWidget {
 class UserInfo extends StatelessWidget {
   const UserInfo({
     Key? key,
-    required this.pessoa,
+    required this.usuario,
   }) : super(key: key);
 
-  final Pessoa pessoa;
+  final Usuario usuario;
 
   @override
   Widget build(BuildContext context) {
@@ -81,7 +81,7 @@ class UserInfo extends StatelessWidget {
             ]),
             const SizedBox(height: 16),
             Text(
-              pessoa.nome,
+              usuario.nome,
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
             ),
             const SizedBox(height: 8),

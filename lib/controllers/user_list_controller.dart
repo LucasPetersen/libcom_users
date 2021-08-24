@@ -1,28 +1,26 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:libcom_pessoas/model/pessoa.dart';
+import 'package:libcom_users/model/usuario.dart';
 
 class UserListController {
-  final pessoaNotifier = ValueNotifier<List<Pessoa>>(<Pessoa>[]);
+  final usuariosNotifier = ValueNotifier<List<Usuario>>([]);
 
-  List<Pessoa> get pessoas => pessoaNotifier.value;
+  List<Usuario> get usuarios => usuariosNotifier.value;
 
-  set pessoas(List<Pessoa> value) => pessoaNotifier.value = value;
+  set usuarios(List<Usuario> usuarios) => usuariosNotifier.value = usuarios;
 
   UserListController() {
-    getBoletos();
+    getUsuarios();
   }
 
-  Future<void> getBoletos() async {
+  Future<void> getUsuarios() async {
     try {
       var dio = Dio();
-      final response = await dio.get('https://users-mock.free.mockoapp.net/users');
-      List<dynamic> users = response.data.map((pessoa) => Pessoa.fromJson(pessoa)).toList();
-      print("usuarios");
-      pessoas = List.from(users);
+      final response = await dio.get("https://users-mock.free.mockoapp.net/users");
+      usuarios = List.from(response.data.map((pessoa) => Usuario.fromJson(pessoa)).toList());
     } catch (e) {
       print(e);
-      pessoas = <Pessoa>[];
+      usuarios = [];
     }
   }
 }

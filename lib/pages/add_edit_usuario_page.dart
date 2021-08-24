@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:libcom_pessoas/model/pessoa.dart';
+import 'package:libcom_users/model/usuario.dart';
 
-class AddEditPessoaPage extends StatefulWidget {
-  final Pessoa? pessoa;
+class AddEditUsuarioPage extends StatefulWidget {
+  final Usuario? usuario;
   final bool isEditing;
 
-  AddEditPessoaPage({Key? key, this.pessoa, this.isEditing = false}) : super(key: key);
+  AddEditUsuarioPage({Key? key, this.usuario, this.isEditing = false}) : super(key: key);
 
   @override
-  _AddEditPessoaPageState createState() => _AddEditPessoaPageState();
+  _AddEditUsuarioPageState createState() => _AddEditUsuarioPageState();
 }
 
-class _AddEditPessoaPageState extends State<AddEditPessoaPage> {
+class _AddEditUsuarioPageState extends State<AddEditUsuarioPage> {
   static final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   bool get isEditing => widget.isEditing;

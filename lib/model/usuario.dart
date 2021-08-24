@@ -7,12 +7,12 @@ import 'dart:convert';
 import 'endereco.dart';
 import 'telefone.dart';
 
-Pessoa usuarioFromJson(String str) => Pessoa.fromJson(json.decode(str));
+Usuario usuarioFromJson(String str) => Usuario.fromJson(json.decode(str));
 
-String usuarioToJson(Pessoa data) => json.encode(data.toJson());
+String usuarioToJson(Usuario data) => json.encode(data.toJson());
 
-class Pessoa {
-  Pessoa({
+class Usuario {
+  Usuario({
     required this.idpessoa,
     required this.nome,
     this.indicadopor,
@@ -52,7 +52,7 @@ class Pessoa {
   final Endereco endereco;
   final List<Telefone> telefones;
 
-  Pessoa copyWith({
+  Usuario copyWith({
     int? idpessoa,
     String? nome,
     Indicadopor? indicadopor,
@@ -72,9 +72,9 @@ class Pessoa {
     Endereco? endereco,
     List<Telefone>? telefones,
   }) =>
-      Pessoa(
-        idpessoa: idpessoa ?? this.idpessoa,
+      Usuario(
         nome: nome ?? this.nome,
+        idpessoa: idpessoa ?? this.idpessoa,
         indicadopor: indicadopor ?? this.indicadopor,
         lgpd: lgpd ?? this.lgpd,
         idade: idade ?? this.idade,
@@ -93,9 +93,9 @@ class Pessoa {
         telefones: telefones ?? this.telefones,
       );
 
-  factory Pessoa.fromJson(Map<String, dynamic> json) => Pessoa(
-        idpessoa: json["idpessoa"],
+  factory Usuario.fromJson(Map<String, dynamic> json) => Usuario(
         nome: json["nome"],
+        idpessoa: json["idpessoa"],
         indicadopor: Indicadopor.fromJson(json["indicadopor"]),
         lgpd: json["lgpd"],
         idade: json["idade"],
@@ -115,8 +115,8 @@ class Pessoa {
       );
 
   Map<String, dynamic> toJson() => {
-        "idpessoa": idpessoa,
         "nome": nome,
+        "idpessoa": idpessoa,
         "indicadopor": indicadopor?.toJson(),
         "lgpd": lgpd,
         "idade": idade,

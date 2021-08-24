@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'model/pessoa.dart';
-import 'pages/add_edit_pessoa_page.dart';
+import 'model/usuario.dart';
+import 'pages/add_edit_usuario_page.dart';
 import 'pages/detail_page.dart';
 import 'pages/home_page.dart';
 import 'pages/splash_page.dart';
@@ -23,11 +23,11 @@ class MyApp extends StatelessWidget {
           "/splash": (context) => SplashPage(),
           "/home": (context) => HomePage(),
           "/detail": (context) => DetailPage(
-                pessoa: ModalRoute.of(context)!.settings.arguments as Pessoa,
+                usuario: ModalRoute.of(context)!.settings.arguments as Usuario,
               ),
-          "/add_edit_pessoa": (context) => AddEditPessoaPage(
-                pessoa: ModalRoute.of(context)!.settings.arguments != null
-                    ? ModalRoute.of(context)!.settings.arguments as Pessoa
+          "/add_edit_usuario": (context) => AddEditUsuarioPage(
+                usuario: ModalRoute.of(context)!.settings.arguments != null
+                    ? ModalRoute.of(context)!.settings.arguments as Usuario
                     : null,
               ),
         });
